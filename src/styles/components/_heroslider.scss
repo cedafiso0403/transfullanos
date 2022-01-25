@@ -1,0 +1,53 @@
+.slider-frame{
+    overflow: hidden;
+    height: 500px;
+    width: 100vw;
+}
+
+
+// @-webkit-keyframes slide_animation{
+//     0% {left: 0px;}
+//     10% {left: 0px;}
+//     20% {left: 1200px;}
+//     30% {left: 1200px;}
+//     40% {left: 2400px;}
+//     50% {left: 2400px;}
+//     60% {left: 1200px;}
+//     70% {left: 1200px;}
+//     80% {left: 0px;}
+//     90% {left: 0px;}
+//     100% {left: 0px;}
+// }
+
+.slide-images{
+    width: 300vw;
+    height: 500px;
+    margin: 0 0 0 -200vw;
+    position: relative;
+    animation: slide_animation 33s running alternate infinite;
+}
+
+.img-container{
+    height: 500px;
+    width: 100vw;
+    position: relative;
+    float: left;
+}
+
+@mixin animation-mixin($name, $from, $to){
+    @keyframes #{$name}{
+        0% {left: 0px;}
+        10% {left: 0px;}
+        20% {left: 100vw;}
+        30% {left: 100vw;}
+        40% {left: 200vw;}
+        50% {left: 200vw;}
+        60% {left: 100vw;}
+        70% {left: 100vw;}
+        80% {left: 0px;}
+        90% {left: 0px;}
+        100% {left: 0px;}
+    }
+}
+
+@include animation-mixin(slide_animation, 0 ,100%);
