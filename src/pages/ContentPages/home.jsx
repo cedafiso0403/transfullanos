@@ -1,4 +1,5 @@
 import Header from "../../components/ContentPages/header";
+import Footer from "../../components/ContentPages/footer";
 import React from 'react'
 import slide1 from "../../images/slide-1.jpg"
 import slide2 from "../../images/slide-2.jpg"
@@ -23,6 +24,7 @@ const Home = () =>{
                     </div>
                 </div>
             </main>
+            <Footer/>
         </div>
     )
 }
