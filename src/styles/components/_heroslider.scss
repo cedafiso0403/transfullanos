@@ -1,6 +1,6 @@
 .slider-frame{
     overflow: hidden;
-    height: 500px;
+    height: 72vh;
     width: 100vw;
 }
 
@@ -21,14 +21,14 @@
 
 .slide-images{
     width: 300vw;
-    height: 500px;
+    height: 72vh;
     margin: 0 0 0 -200vw;
     position: relative;
     animation: slide_animation 33s running alternate infinite;
 }
 
 .img-container{
-    height: 500px;
+    height: 72vh;
     width: 100vw;
     position: relative;
     float: left;

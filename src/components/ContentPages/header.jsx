@@ -4,9 +4,9 @@ import React from 'react';
 
 const Header = () => {
     return (
-        <div>
+        <div id="header_box">
             <h1>Transfullanos</h1>
-            <nav>
+            <nav id="header_navbox">
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/products">Products</Link></li>
