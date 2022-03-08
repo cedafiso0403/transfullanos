@@ -1,0 +1,68 @@
+#header_box{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    background-color: white;
+}
+
+#header_navbox{
+    width: 40%;
+    font-size: 0.90em;
+}
+#header_box h1{
+    color: #0077BD;
+    margin-left: 10%;
+    font-weight: 500;
+}
+
+#header_navbox ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+#header_navbox li{
+    margin-left: 4%;
+    margin-right: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#header_navbox li a{
+    white-space: nowrap;
+    width: 100%;
+    text-decoration: none;
+    color: #556270;
+    font-weight: bold;
+    font-size: 1.2em;
+    font-weight: 450;
+}
+
+.login-button{
+    border: 1px solid #0077BD;
+    background-color: #0077BD;
+    border-radius: 10px;
+    width: 120px;
+    padding: 5px 0 6px 0;
+}
+
+.login-button a{
+    color: white !important;
+    text-align: center;
+    margin: auto;
+    width: 3em;
+}
+
+.login-button a:visited{
+    color: #556270;
+}
+
+.text-color{
+    color: white;
+}
