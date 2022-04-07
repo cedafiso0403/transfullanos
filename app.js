@@ -24,13 +24,13 @@ app.use((req,res,next)=>{
     next();
 })
 
-
-app.get('*', (req, res) =>{
-    req.sendFile(path.resolve(__dirname, 'public', 'index.html'))
-})
-
 app.use('/api/v1/', router, (req, res) =>{
 
 });
+
+app.get('*', (req, res) =>{
+    
+})
+
 
 
