@@ -21,7 +21,7 @@ React Front End
 
 #### API End Points
 
-POST: `/api/v1/signup`
+`POST`: `/api/v1/signup`
 
 Expected body 
 
@@ -39,7 +39,7 @@ Expected response
 
 ```js
 {
-    url :  `/api/v1/getprofile/${result._id}`,
+    url :  `/api/v1/getprofile/624f987a67e89d576c5b3795`,
     status: "Success",
     message: "User created!",
     data: {
@@ -54,7 +54,7 @@ Expected response
 }
 ```
 
-POST: `/api/v1/login`
+`POST`: `/api/v1/login`
 
 Expected body 
 
@@ -76,7 +76,7 @@ Expected response
 }
 ```
 
-POST: `/api/v1/isauth`
+`POST`: `/api/v1/isauth`
 
 Expected response
 
@@ -84,6 +84,38 @@ Expected response
 {
     status: "Success",
     message: "Token is valid",
+}
+```
+
+`GET`: `/api/v1/getprofile/:id`
+
+Expected response
+
+```js
+{
+    status: 'Success',
+    message: "Profile found",
+    data: {
+        _id: "624f987a67e89d576c5b3795",
+        name:"Jhon Smith",
+        email: "test@test.com",
+        dateOfBirth: "1990-02-28:00:00.000Z",
+        orders: [{
+            _id:"624f5712b99c55001635086a",
+            weight:1,
+            width:1,
+            height:1,
+            length:1,
+            fromCountry:"canada",
+            fromCity:"vancouver",
+            toCountry:"colombia",
+            toCity:"barranquilla",
+            date: "2022-04-15T00:00:00.000+00:00",
+            description:"test",
+            }
+        ],
+        __v: 0
+    }
 }
 ```
 ### API for order handlening 

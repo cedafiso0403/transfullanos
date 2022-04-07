@@ -184,7 +184,7 @@ const getProfile = (req, res) => {
                     data: {
                         id: data[0]._id,
                         name: data[0].name,
-                        id: data[0].email,
+                        email: data[0].email,
                         dateOfBirth: data[0].dateOfBirth,
                         orders: data[0].orders
                     }
