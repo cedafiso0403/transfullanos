@@ -5,10 +5,14 @@ const connection = require("./db/connection.js");
 const router = require("./routes/index.js");
 const cors = require('cors');
 
+app.set('port', process.env.PORT || 8080);
+let server = app.listen(app.settings.port, () => console.log('Listening on', app.settings.port));
+
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
+
 app.use((req,res,next)=>{
 
     res.header("Access-Control-Allow-Origin", "*");
@@ -25,8 +29,6 @@ app.use('/api/v1/', router, (req, res) =>{
 
 connection.then(()=>{
     console.log("Connected to database!");
-    const server = app.listen(process.env.PORT || 8080, ()=>console.log("listening"));
-
 })
 
 
