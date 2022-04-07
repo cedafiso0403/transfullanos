@@ -8,6 +8,10 @@ const path = require('path')
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
+connection.then(()=>{
+    console.log("Connected to database!");
+})
+
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -20,15 +24,13 @@ app.use((req,res,next)=>{
     next();
 })
 
-app.use('/api/v1/', router, (req, res) =>{
-
-});
-
-connection.then(()=>{
-    console.log("Connected to database!");
-})
 
 app.get('*', (req, res) =>{
     req.sendFile(path.resolve(__dirname, 'public', 'index.html'))
 })
+
+app.use('/api/v1/', router, (req, res) =>{
+
+});
+
 
