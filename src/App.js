@@ -36,7 +36,7 @@ const App = (props) => {
     }, [isLogged])
 
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             {!isAuth ?
                 <div id="all">
                     <ReactModal
