@@ -3,6 +3,7 @@ const app = express();
 const connection = require("./db/connection.js");
 const router = require("./routes/index.js");
 const cors = require('cors');
+const path = require('path')
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
@@ -19,14 +20,15 @@ app.use((req,res,next)=>{
     next();
 })
 
-
 app.use('/api/v1/', router, (req, res) =>{
 
 });
-
 
 connection.then(()=>{
     console.log("Connected to database!");
 })
 
+app.get('*', (req, res) =>{
+    req.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+})
 
