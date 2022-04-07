@@ -63,16 +63,17 @@ const signUp = (req, res) => {
                         dateOfBirth
                     });
                     newUser.save().then(result => {
-                        res.json({
+                        res.set(
+                            'content-location', `/api/v1/getprofile/${result._id}`
+                        ).json({
                             status: "Success",
                             message: "User created!",
                             data: result,
                         })
                     }).catch(err => {
-                        console.log(err);
                         res.json({
                             status: "Fail",
-                            message: "Error while creating user"
+                            message: "Error while creating user",
                         })
 
                     })
@@ -111,7 +112,7 @@ const logIn = (req, res) => {
                     bcrypt.compare(password, hashedPassword).then(result => {
                         if (result) {
                             const token = jwt.sign({ _id: data[0]._id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 600 });
-                            res.header("auth-token", token)
+                            res.header("auth-token", token);
                             res.json({
                                 status: 'Success',
                                 message: "Success log in",
@@ -178,6 +179,7 @@ const getProfile = (req, res) => {
             if (data.length) {
                 res.json({
                     status: 'Success',
+                    message: "Profile found",
                     data: {
                         id: data[0]._id,
                         name: data[0].name,
@@ -196,7 +198,6 @@ const getProfile = (req, res) => {
             res.json({
                 status: 'Fail',
                 message: "Error while looking for id",
-                err
             })
         })
 }

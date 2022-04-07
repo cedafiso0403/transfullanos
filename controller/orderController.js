@@ -12,34 +12,35 @@ const createOrder = (req, res) => {
     let { weight, width, height, length, fromCountry, fromCity, toCountry, toCity, date, description, id } = req.body;
     if (res.locals.formErrors.length > 0) {
         res.json({
+            status: 'Fail',
             message: "Encounter an error while validating the information",
-            error: res.locals.formErrors
         }).status(500)
     } else {
         User.findOne({ "_id": id }).exec((err, user) => {
             if (err) {
                 res.json({
+                    status: 'Fail',
                     message: "Encounter an error while validating id the order",
-                    error: err
                 }).status(500)
             } else if (user != null) {
                 const newOrder = new Order({ weight, width, height, length, fromCountry, fromCity, toCountry, toCity, date, description });
                 user.orders.push(newOrder);
                 user.save().then((result) => {
                     res.set('content-location', `/api/v1/order/`).json({
+                        status: 'Success',
                         url: `/api/v1/order/`,
                         data: newOrder
                     }).status(201)
                 }).catch((err) => {
                     res.json({
+                        status: 'Fail',
                         message: "Encounter an error while adding the order",
-                        error: err
                     }).status(500)
                 });
             } else {
                 res.json({
+                    status: 'Fail',
                     message: "Could not connect to you id, try log out and log in again",
-                    error: err
                 }).status(500)
             }
         })
