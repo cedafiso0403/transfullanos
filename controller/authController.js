@@ -101,7 +101,7 @@ const logIn = (req, res) => {
     if (email == "" || password == "") {
         res.json({
             status: "Fail",
-            message: "Empty credentials"
+            message: "All credentials required"
         });
     } else {
         User.find({ email })

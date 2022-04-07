@@ -11,13 +11,16 @@ const LogIn = (props) => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [formMessage, setFormMessage] = useState("");
 
     const usernameHandlerer = (e) => {
         setUsername(e.target.value)
+        setFormMessage("")
     }
 
     const passwordHandlerer = (e) => {
         setPassword(e.target.value)
+        setFormMessage("")
     }
 
     const logInFormHandlerer = (e) => {
@@ -34,6 +37,7 @@ const LogIn = (props) => {
                 props.setShowModal(false);
             } else {
                 props.setIsLogged(false);
+                setFormMessage(result.data.message)
             }
         }).catch((err) => {
             props.setIsLogged(false);
@@ -58,6 +62,9 @@ const LogIn = (props) => {
                         <button type='submit'>Log In</button>
                     </label>
                 </form>
+                {formMessage !== "" ? <div className={"form-message Fail"}>
+                    <p>{formMessage}</p>
+                </div> : ""}
                 <div className='login-options'>
                     <button onClick={e => props.setDisplayPage("signup")}>Or Sign up</button>
                     <button>Forgot password?</button>
