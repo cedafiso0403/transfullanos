@@ -5,8 +5,10 @@ const connection = require("./db/connection.js");
 const router = require("./routes/index.js");
 const cors = require('cors');
 
-app.set('port', process.env.PORT || 8080);
-let server = app.listen(app.settings.port, () => console.log('Listening on', app.settings.port));
+//app.set('port', process.env.PORT || 8080);
+app.listen(process.env.PORT || 8080, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
