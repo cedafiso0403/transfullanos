@@ -13,7 +13,7 @@ const Dashboard = (props) => {
     const [refresh, setRefresh] = useState(false);
 
     const getUserData = (id) => {
-        axios.get(`http://localhost:8080/api/v1/getprofile/${id}`, {}, {headers:{
+        axios.get(`/api/v1/getprofile/${id}`, {}, {headers:{
             "auth-token":localStorage.getItem('auth-token')
         }}).then((result) => {
             setAllOrders(result.data.data.orders);
