@@ -1,0 +1,320 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    min-height: 100% !important;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+}
+
+#all {
+    display: grid;
+    grid-template-rows: 12vh 75vh 13vh;
+}
+
+
+.products-container {
+    color: black;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.login-container {
+    color: black;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.contact-container {
+    color: white;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+#background-img-products img {
+    width: 100%;
+    height: 100%;
+}
+
+#background-img-products {
+    background-image: url("./Images/background-image.jpg");
+    position: absolute;
+    background-size: 100% 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.9;
+    width: 100%;
+    height: 100%;
+}
+
+#background-img-login {
+    background-image: url("./Images/background-image.jpg");
+    position: absolute;
+    background-size: 100% 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.9;
+    width: 100%;
+    height: 100%;
+}
+
+#background-img-contact {
+    background-image: url(https://logisber.com/contenido/subidas/2019/07/empresa-de-transporte-maritimo-internacional-1920x1080.jpg);
+    position: absolute;
+    background-size: 100% 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.9;
+    width: 100%;
+    height: 100%;
+}
+
+#background-color-products {
+    position: absolute;
+    size: 100% 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background-color: black;
+}
+
+#background-color-contact {
+    position: absolute;
+    size: 100% 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    background-color: black;
+}
+
+.service-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.us-container {
+    margin: auto;
+    position: relative;
+    width: 80%;
+    display: flex;
+    flex-wrap: row;
+    padding: 0;
+    height: 100%;
+}
+
+.service-container-unit {
+    min-height: 15em;
+    width: 30%;
+    margin-left: 2%;
+    margin-bottom: 1%;
+    margin-top: 5%;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.us-container-unit {
+    font-size: 120%;
+    padding-left: 1em;
+    padding-right: 1em;
+    min-height: 15em;
+    width: 25vw;
+    height: 70vh;
+    margin-right: 5%;
+    margin-top: 5%;
+    border-radius: 5px;
+    border: 2px solid white;
+}
+
+.us-container-unit p {
+    margin-top: 1em;
+    text-align: justify;
+}
+
+.us-container-unit h1 {
+    margin-top: 1em;
+}
+
+.slider-frame {
+    overflow: hidden;
+    width: 100vw;
+}
+
+
+@-webkit-keyframes slide_animation {
+    0% {
+        left: 0px;
+    }
+
+    10% {
+        left: 0px;
+    }
+
+    20% {
+        left: 100vw;
+    }
+
+    30% {
+        left: 100vw;
+    }
+
+    40% {
+        left: 200vw;
+    }
+
+    50% {
+        left: 200vw;
+    }
+
+    60% {
+        left: 100vw;
+    }
+
+    70% {
+        left: 100vw;
+    }
+
+    80% {
+        left: 0px;
+    }
+
+    90% {
+        left: 0px;
+    }
+
+    100% {
+        left: 0px;
+    }
+}
+
+.slide-images {
+    width: 300vw;
+    height: 100%;
+    margin: 0 0 0 -200vw;
+    position: relative;
+    animation: slide_animation 33s running alternate infinite;
+}
+
+.img-container {
+    height: 100%;
+    width: 100vw;
+    float: left;
+    position: relative;
+}
+
+.img-container img {
+    height: 100%;
+    width: 100vw;
+    position: relative;
+    float: left;
+}
+
+.background-home {
+    background-color: black;
+    opacity: 0.7;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slider-frame {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.text-container {
+    font-size: 1.25em;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    left: 25%;
+    top: 0;
+    width: 50%;
+    height: 100%;
+}
+
+.text-container h3 {
+    text-align: center;
+}
+
+.modal-loggin {
+    display: flex;
+    flex-direction: row;
+    min-width: 800px;
+    min-height: 80vh;
+    background-color: white;
+    position: relative;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.close-modal-button {
+    position: absolute;
+    top: 0.2em;
+    right: 0.2em;
+    background: transparent;
+    border: none;
+    padding: 0;
+    font-size: 2em;
+    transition: all 0.2s ease-in-out;
+}
+
+.close-modal-button:hover {
+    font-size: 2.2em;
+    transform: translate(0.05em, -0.05em);
+}
+
+.close-modal-button:hover {
+    cursor: pointer;
+}
+
+.ReactModalPortal>div {
+    opacity: 0;
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 400ms ease-in-out;
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open {
+    background-color: rgba(0, 0, 0, 0.75);
+    opacity: 1;
+}
+
+.ReactModalPortal .ReactModal__Overlay--before-close {
+    opacity: 0;
+}

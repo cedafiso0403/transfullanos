@@ -1,0 +1,90 @@
+#header_box{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    border-bottom: 4px solid #012333;
+}
+
+#header_navbox{
+    width: 40%;
+    font-size: 0.90em;
+}
+
+#header_box h1{
+    margin-left: 10%;
+    color: #012333;
+    font-weight: 500;
+    text-align: left;
+}
+
+#header_navbox ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+#header_navbox li{
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#header_navbox li a{
+    white-space: nowrap;
+    width: 100%;
+    text-decoration: none;
+    color: #556270;
+    font-weight: bold;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: 0.8s all ease-in-out;
+}
+
+#header_navbox li a:hover{
+    color: #0077BD;
+}
+
+
+#login-button{
+    border: 1px solid #012333;
+    background-color: #012333;
+    border-radius: 5px;
+    width: 20%;
+    padding: 5px 0 6px 0;
+    transition: 0.2s all ease-in-out;
+    height: 30px;
+    color: white;
+    margin-left: 40px;
+}
+
+#login-button:hover{
+    cursor: pointer;
+    border: 2px solid #0077BD;
+    background-color: white;
+}
+
+
+#login-button:hover{
+    color: #012333;
+}
+
+.text-color{
+    border: none;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    height: 25px
+}
+
+.text-color:hover{
+    cursor: pointer;
+    color: #556270;
+}
