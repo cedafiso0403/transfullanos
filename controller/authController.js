@@ -66,6 +66,7 @@ const signUp = (req, res) => {
                         res.set(
                             'content-location', `/api/v1/getprofile/${result._id}`
                         ).json({
+                            url :  `/api/v1/getprofile/${result._id}`,
                             status: "Success",
                             message: "User created!",
                             data: result,
