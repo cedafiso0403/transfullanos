@@ -22,9 +22,7 @@ React Front End
 #### API End Points
 
 `POST`: `/api/v1/signup`
-
 Expected body 
-
 ```js
 {
     name: "Jhon Smith",
@@ -34,9 +32,7 @@ Expected body
 
 }
 ```
-
 Expected response
-
 ```js
 {
     url :  `/api/v1/getprofile/624f987a67e89d576c5b3795`,
@@ -53,20 +49,15 @@ Expected response
     },
 }
 ```
-
 `POST`: `/api/v1/login`
-
 Expected body 
-
 ```js
 {
     email: "test@test.com",
     password: "Test1234"
 }
 ```
-
 Expected response
-
 ```js
 {
     status: 'Success',
@@ -75,22 +66,16 @@ Expected response
     id: "624f987a67e89d576c5b3795"
 }
 ```
-
 `POST`: `/api/v1/isauth`
-
 Expected response
-
 ```js
 {
     status: "Success",
     message: "Token is valid",
 }
 ```
-
 `GET`: `/api/v1/getprofile/:id`
-
 Expected response
-
 ```js
 {
     status: 'Success',
@@ -120,3 +105,80 @@ Expected response
 ```
 ### API for order handlening 
 
+#### API End Points
+
+`POST`: `/api/v1/order/create`
+Expected body 
+```js
+{
+    weight: 1,
+    width: 1,
+    height: 1,
+    length: 1,
+    fromCountry: "Canada",
+    fromCity: "Vancouver",
+    toCountry: "Colombia",
+    toCity: "Barranquilla",
+    date: "28-02-1990",
+    description: "Test",
+    id: "624f987a67e89d576c5b3795"
+}
+```
+Expected response
+```js
+{
+    status: 'Success',
+    url: `/api/v1/order/`,
+    data: {
+        _id:"624f5712b99c55001635086a",
+        weight:1,
+        width:1,
+        height:1,
+        length:1,
+        fromCountry:"canada",
+        fromCity:"vancouver",
+        toCountry:"colombia",
+        toCity:"barranquilla",
+        date: "2022-04-15T00:00:00.000+00:00",
+        description:"test",
+    }
+}
+```
+`GET`: `/api/v1/order/`
+Expected body 
+
+```js
+{
+    weight: 1,
+    width: 1,
+    height: 1,
+    length: 1,
+    fromCountry: "Canada",
+    fromCity: "Vancouver",
+    toCountry: "Colombia",
+    toCity: "Barranquilla",
+    date: "28-02-1990",
+    description: "Test",
+    id: "624f987a67e89d576c5b3795"
+}
+```
+Expected response
+```js
+{
+    status: 'Success',
+    url: `/api/v1/order/`,
+    data: {
+        _id:"624f5712b99c55001635086a",
+        weight:1,
+        width:1,
+        height:1,
+        length:1,
+        fromCountry:"canada",
+        fromCity:"vancouver",
+        toCountry:"colombia",
+        toCity:"barranquilla",
+        date: "2022-04-15T00:00:00.000+00:00",
+        description:"test",
+    }
+}
+```

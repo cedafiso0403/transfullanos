@@ -46,10 +46,6 @@ const createOrder = (req, res) => {
         })
     }
 }
-//Signin
-const getOrders = (req, res) => {
-
-}
 
 const isAuth = (req, res, next) => {
     const token = req.header('auth-token');
@@ -73,4 +69,4 @@ const isAuth = (req, res, next) => {
     }
 }
 
-module.exports = { getOrders, createOrder, isAuth };
+module.exports = {createOrder, isAuth };
